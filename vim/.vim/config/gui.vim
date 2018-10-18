@@ -52,6 +52,8 @@ set guicursor+=c:CommandCursor
 set guicursor+=v-ve:VisualCursor
 set guicursor+=a:blinkon0
 
+autocmd InsertEnter,InsertLeave * set cul!
+
 " ................................... Gvim Options (make it look like terminal!)
 
 set guioptions+=LlRrb                  " hide scrollbars
