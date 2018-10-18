@@ -10,6 +10,7 @@
 set nocompatible                      " disable vi-compatibility
 filetype plugin on
 syntax on
+set selection=inclusive
 
 " ....................................................................... System
 

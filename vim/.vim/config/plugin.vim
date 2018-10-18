@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/limelight.vim'          " hyperfocus highlighting
 Plug 'morhetz/gruvbox'                 " easily distinguishable colours
+Plug 'nightsense/shoji'                " Syntax w/ colourful bkg highlighting
 
 " ......................................................................... Info
 
@@ -51,6 +52,10 @@ Plug 'junegunn/fzf.vim'                " fuzzy finder
 " ....................................................................... Linter
 
 Plug 'w0rp/ale'                        " asynchronous lint engine
+
+" ............................................................................ R
+
+Plug 'jalvesaq/Nvim-R'                 " R plugin
 
 " Editing ______________________________________________________________________
 

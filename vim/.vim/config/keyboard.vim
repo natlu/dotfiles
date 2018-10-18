@@ -4,16 +4,18 @@
 " Keyboard
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-augroup kbd
-  autocmd!
-augroup END
+" augroup kbd
+"   autocmd!
+" augroup END
 
 
 " (re)mapping __________________________________________________________________
 
 " ....................................................................... leader
 
-map <SPACE> <leader>                   " SPACE is leader
+" this has been put in .vimrc
+" not working if it is used in this file
+" map <SPACE> <leader>                 " SPACE is leader
 " let mapleader='\<Space>'             " SPACE is leader
 
 
@@ -64,7 +66,7 @@ map      <leader>p pgvy
 nnoremap <leader>i `[v`]
 
 " disable paste mode when leaving Insert Mode
-autocmd kbd InsertLeave * set nopaste
+" autocmd kbd InsertLeave * set nopaste
 
 
 " .............................................................. Select text
@@ -72,5 +74,4 @@ autocmd kbd InsertLeave * set nopaste
 " extend paragraph selection
 vmap <A-k> {
 vmap <A-j> }
-
 

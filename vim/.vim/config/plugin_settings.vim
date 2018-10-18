@@ -8,9 +8,9 @@
 
 " ........................................................................ Setup
 
-augroup plugin
-  autocmd!
-augroup END
+" augroup plugin
+"   autocmd!
+" augroup END
 
 " ....................................................................... vimwiki
 
@@ -19,6 +19,18 @@ let g:vimwiki_list = [{
     \ , 'syntax': 'markdown'
     \ , 'ext': '.md'
     \}]
+
+" ....................................................................... Nvim R
+
+" use rtichoke
+let R_app = "rtichoke"
+let R_cmd = "R"
+let R_ht_term = 0
+let R_args = []
+let R_bracketed_paste = 1
+
+" diable _ to <-
+let R_assign = 0
 
 " .......................................................................... Ale
 
@@ -269,9 +281,16 @@ let g:limelight_priority            = 1 " -1 to hlsearch highlight all paragraph
 
 " syntax enable
 
-" ...................................................................... gruvbox
+" ........................................................................ theme
 
-colorscheme gruvbox
+" .......... gruvbox .......... "
+
+" colorscheme gruvbox
+
+" .......... shoji .......... "
+
+colorscheme shoji_niji
+set termguicolors
 
 " ....................................................................... Tagbar
 
