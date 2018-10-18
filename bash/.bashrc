@@ -120,6 +120,6 @@ fi
 # MY BASH SETTINGS
 ################################################################################
 
-# Alias
+# alias
 alias vim='nvim'
 alias vi='nvim'
