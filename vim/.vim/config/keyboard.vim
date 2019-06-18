@@ -68,6 +68,9 @@ nnoremap <leader>i `[v`]
 " disable paste mode when leaving Insert Mode
 " autocmd kbd InsertLeave * set nopaste
 
+" map black hole register
+nnoremap <Del> "_d
+xnoremap <Del> "_d
 
 " .............................................................. Select text
 

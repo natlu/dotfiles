@@ -17,6 +17,18 @@ set virtualedit=block                  " allow virtual editing in Visual block m
 set winminheight=0                     " minimum window height
 set wrap                               " wrap lines for viewing
 
+
+" fix cursor display in cygwin
+if has("win32unix")
+    let &t_ti.="\e[1 q"
+    let &t_SI.="\e[5 q"
+    let &t_EI.="\e[1 q"
+    let &t_te.="\e[0 q"
+endif
+
+let &t_8f = "<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "<Esc>[48;2;%lu;%lu;%lum"
+
 " ....................................................................... Alerts
 
 set noerrorbells                       " don't beep
@@ -29,7 +41,7 @@ nmap <leader>e :echo errmsg<CR>
 
 " .................................................................... Scrolling
 
-let g:scrolloff = 5                    " num lines to show above or below cursor
+set scrolloff=5                    " num lines to show above or below cursor
 set sidescroll=1                       " smooth scrolling by 1 column
 
 " Terminal _____________________________________________________________________
@@ -65,17 +77,25 @@ set guioptions-=T                      " no toolbar
 
 " ............................................................... Column margins
 
-set colorcolumn=0                      " highlight column
+set colorcolumn=81                     " highlight column
+
+" let &colorcolumn=join(range(82,999),",")
+" let &colorcolumn="81,".join(range(120,999),",")
+" augroup colorcolumn
+"     autocmd!
+"     autocmd ColorScheme shoji_niji highlight ColorColumn ctermbg=254 guibg=#e4e4e4
+" augroup end
 
 " ................................................................. Line numbers
 
 set number
-set numberwidth=5
+set numberwidth=4
 set relativenumber
 
 " ....................................................... Status / command lines
 
-set laststatus=2                       " always show status line
+set laststatus=0                       " do not show status line
+" set laststatus=2                     " always show status line
 " set ruler                            " show cursor position in status line
 set noshowcmd                          " show incomplete cmds in command line
 set noshowmode                         " show current mode in command line

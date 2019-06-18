@@ -15,7 +15,7 @@
 " ....................................................................... vimwiki
 
 let g:vimwiki_list = [{
-    \   'path': '~/vimwiki'
+    \   'path': '/data/analytics/nlu/vimwiki'
     \ , 'syntax': 'markdown'
     \ , 'ext': '.md'
     \}]
@@ -23,30 +23,39 @@ let g:vimwiki_list = [{
 " ....................................................................... Nvim R
 
 " use rtichoke
-let R_app = "rtichoke"
-let R_cmd = "R"
-let R_ht_term = 0
-let R_args = []
-let R_bracketed_paste = 1
+" let R_app = "rtichoke"
+" let R_cmd = "R"
+" let R_ht_term = 0
+" let R_args = []
+" let R_bracketed_paste = 1
 
 " diable _ to <-
 let R_assign = 0
 
+
+" tmux compatability
+let R_source = '~/.vim/autoload/tmux_split.vim'
+let R_in_buffer = 0
+let R_tmux_split = 1
+let R_tmux_close = 0
+
+
+
 " .......................................................................... Ale
 
-let g:ale_sign_column_always = 1
-let g:ale_sign_error         = ''
-let g:ale_sign_warning       = ''
-let g:ale_linter_aliases     =
-    \{
-    \  'wiki' : 'markdown'
-    \, 'mail' : 'markdown'
-    \}
-
-nmap <silent><leader>k <Plug>(ale_previous_wrap)
-nmap <silent><leader>j <Plug>(ale_next_wrap)
-nmap <silent><leader>? <Plug>(ale_detail)
-nmap <silent><leader>! :ALEToggle
+" let g:ale_sign_column_always = 1
+" let g:ale_sign_error         = ''
+" let g:ale_sign_warning       = ''
+" let g:ale_linter_aliases     =
+"     \{
+"     \  'wiki' : 'markdown'
+"     \, 'mail' : 'markdown'
+"     \}
+" 
+" nmap <silent><leader>k <Plug>(ale_previous_wrap)
+" nmap <silent><leader>j <Plug>(ale_next_wrap)
+" nmap <silent><leader>? <Plug>(ale_detail)
+" nmap <silent><leader>! :ALEToggle
 
 " ................................................................... Auto-pairs
 
@@ -57,19 +66,24 @@ nmap <silent><leader>! :ALEToggle
 
 " ................................................................... Easy-align
 
-let g:easy_align_delimiters =
-    \{
-    \  '>' : { 'pattern' : '>>\|=>\|>' }
-    \, '^' : { 'pattern' : '=',        'left_margin' : 0, 'right_margin' : 0, 'align' : 'right' }
-    \, '(' : { 'pattern' : '(',        'left_margin' : 1, 'right_margin' : 0 }
-    \, ')' : { 'pattern' : ')',        'left_margin' : 0 }
-    \, ']' : { 'pattern' : ']',        'left_margin' : 1 }
-    \}
+" let g:easy_align_delimiters =
+"     \{
+"     \  '>' : { 'pattern' : '>>\|=>\|>' }
+"     \, '^' : { 'pattern' : '=',        'left_margin' : 0, 'right_margin' : 0, 'align' : 'right' }
+"     \, '(' : { 'pattern' : '(',        'left_margin' : 1, 'right_margin' : 0 }
+"     \, ')' : { 'pattern' : ')',        'left_margin' : 0 }
+"     \, ']' : { 'pattern' : ']',        'left_margin' : 1 }
+"     \}
 
-vmap <Enter>   <Plug>(EasyAlign)
-nmap <leader>a <Plug>(EasyAlign)
+" vmap <Enter>   <Plug>(EasyAlign)
+" nmap <leader>a <Plug>(EasyAlign)
+"
 " format markdown table
-vmap <Bar>     :EasyAlign! *<Bar><CR>
+" vmap <Bar>     :EasyAlign! *<Bar><CR>
+
+xmap ga <Plug>(EasyAlign)
+
+nmap ga <Plug>(EasyAlign)
 
 " .................................................................. Eightheader
 
@@ -82,6 +96,16 @@ vmap <Bar>     :EasyAlign! *<Bar><CR>
 "     \, '\\= s:foldlines . \" lines\"'
 "     \, ''
 "     \)"
+
+set fillchars=fold:\ 
+let &foldtext =
+      \"EightHeaderFolds(
+      \   80
+      \, 'left'
+      \, [ repeat( '→ ', v:foldlevel ), ' ', '' ]
+      \, '\\=s:foldlines . \" lines\"'
+      \, '\\=s:str[0:68]'
+      \)"
 
 " .......................................................................... Fzf
 
@@ -286,11 +310,16 @@ let g:limelight_priority            = 1 " -1 to hlsearch highlight all paragraph
 " .......... gruvbox .......... "
 
 " colorscheme gruvbox
+" set background=dark
 
 " .......... shoji .......... "
 
 colorscheme shoji_niji
-set termguicolors
+" set termguicolors
+if &term =~ '256color'
+  " disable Background Color Erase (BCE)
+  set t_ut=
+endif 
 
 " ....................................................................... Tagbar
 

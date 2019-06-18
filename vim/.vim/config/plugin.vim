@@ -31,6 +31,10 @@ Plug 'kana/vim-arpeggio'               " key chords
 " Plug 'itchyny/vim-cursorword'        " word highlighting
 " Plug 'nathanaelkane/vim-indent-guides', { 'on' : 'IndentGuidesToggle' } " colourized indent columns
 
+" ......................................................................... Tmux
+
+" Plug 'christoomey/vim-tmux-navigator'
+
 " Buffers ______________________________________________________________________
 
 " ................................................................... Management
@@ -51,7 +55,7 @@ Plug 'junegunn/fzf.vim'                " fuzzy finder
 
 " ....................................................................... Linter
 
-Plug 'w0rp/ale'                        " asynchronous lint engine
+" Plug 'w0rp/ale'                        " asynchronous lint engine
 
 " ............................................................................ R
 
@@ -83,6 +87,9 @@ Plug 'junegunn/vim-easy-align'         " align text objects
 " Plug 'kana/vim-textobj-user'         " dependency
 Plug 'tpope/vim-surround'              " pairwise c'hange, d'elete, y'ank
 
+" ........................................................................ Table
+
+Plug 'dhruvasagar/vim-table-mode'      " operations on tables
 
 
 call plug#end()
