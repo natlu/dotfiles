@@ -40,6 +40,9 @@ let R_tmux_split = 1
 let R_tmux_close = 0
 
 
+" ........................................................................ Slime
+
+let g:slime_target = "tmux"
 
 " .......................................................................... Ale
 
@@ -84,6 +87,24 @@ let R_tmux_close = 0
 xmap ga <Plug>(EasyAlign)
 
 nmap ga <Plug>(EasyAlign)
+
+" ................................................................... Auto-pairs
+" f9 to toggle nerdtree
+nnoremap <F9> :NERDTreeToggle<cr>
+
+" autostart if vim start with no file
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in) | NERDTree | endif
+
+" autostart if start vim in directory
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0] && exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+" close vim in only window is nerdtree
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+let g:NERDTreeDirArrowExandpable = '+'
+let g:NERDTreeDirArrowCollapsible = '-' 
 
 " .................................................................. Eightheader
 

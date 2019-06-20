@@ -11,19 +11,35 @@ call plug#begin('~/.vim/plugged')
 
 " ....................................................................... Layout
 
-Plug 'junegunn/limelight.vim'          " hyperfocus highlighting
 Plug 'morhetz/gruvbox'                 " easily distinguishable colours
 Plug 'nightsense/shoji'                " Syntax w/ colourful bkg highlighting
+" Plug 'kamwitsta/flatwhite-vim'       " atom light background theme
+" Plug 'NLKNguyen/papercolor-theme'    " paper theme
+" Plug 'junegunn/seoul256.vim'         " based on seoul colours
+" Plug 'tlhr/anderson.vim'             " wes anderson colours
+" Plug 'reedes/vim-colors-pencil'      " for use with Goyo
+
+" ........................................................................... UI
+Plug 'junegunn/limelight.vim'          " hyperfocus highlighting
+" Plug 'blueyed/vim-diminactive'       " dim inactive windows
+" Plug 'itchyny/lightline.vim'         " status bar
+" Plug 'itchyny/vim-cursorword'        " word underlining
+" Plug 'lilydjwg/colorizer'            " colourise text like #rrggbb or #rgb
+" Plug 'machakann/vim-highlightedyank' " highlight yanked text
 
 " ......................................................................... Info
 
-" Plug 'majutsushi/tagbar'             " ctags
 Plug 'bimlas/vim-eightheader'          " custom foldtext
+" Plug 'majutsushi/tagbar'             " ctags
+" Plug 'junegunn/vim-peekaboo'         " peek at registers
+" Plug 'Yilin-Yang/vim-markbar'        " sidebar for marks
 
 " ....................................................................... Keymap
 
 Plug 'kana/vim-arpeggio'               " key chords
 " Plug 'tpope/vim-rsi'                 " readline keybindings
+Plug 'tpope/vim-tbone'                 " vim tmux stuff
+Plug 'christoomey/vim-tmux-navigator'  " navigate b/w tmux and vim
 
 " ................................................................. Highlighting
 
@@ -35,11 +51,13 @@ Plug 'kana/vim-arpeggio'               " key chords
 
 " Plug 'christoomey/vim-tmux-navigator'
 
+
 " Buffers ______________________________________________________________________
 
 " ................................................................... Management
 
 " Plug 'chrisbra/NrrwRgn', { 'on' : 'NrrwrgnDo' } " visual block buffer
+" Plug 'junegunn/goyo.vim'             " distraction free writing
 
 " .............................................................. Version control
 
@@ -61,6 +79,11 @@ Plug 'junegunn/fzf.vim'                " fuzzy finder
 
 Plug 'jalvesaq/Nvim-R'                 " R plugin
 
+" ..............................................................................
+
+Plug 'jpalardy/vim-slime'
+
+
 " Editing ______________________________________________________________________
 
 " ................................................................... Navigation
@@ -69,16 +92,19 @@ Plug 'jalvesaq/Nvim-R'                 " R plugin
 " Plug 'Konfekt/FastFold'              " update folds
 " Plug 'kshenoy/vim-signature'         " toggle marks
 " Plug 'justinmk/vim-sneak'            " jump to location
+Plug 'scrooloose/nerdtree'             " tree explorer
 
 " ...................................................................... History
 
 " Plug 'sjl/gundo.vim', { 'on' : 'GundoToggle' } " undo
 " Plug 'vim-scripts/YankRing.vim'      " paste (yank)
+" Plug 'mbbill/undootree'              " undo
 
 " ................................................................... Formatting
 
-" Plug 'scrooloose/nerdcommenter'      " toggle comment
 Plug 'junegunn/vim-easy-align'         " align text objects
+" Plug 'tpope/vim-commentary'          " comments
+" Plug 'scrooloose/nerdcommenter'      " toggle comment
 " Plug 'reedes/vim-pencil'             " dynamic paragraph formatting
 
 " ................................................................... Completion
@@ -86,6 +112,7 @@ Plug 'junegunn/vim-easy-align'         " align text objects
 " Plug 'jiangmiao/auto-pairs'          " insert/delete pairs
 " Plug 'kana/vim-textobj-user'         " dependency
 Plug 'tpope/vim-surround'              " pairwise c'hange, d'elete, y'ank
+" Plug 'tpope/vim-repeat'              " enable repeating supported plugin maps
 
 " ........................................................................ Table
 

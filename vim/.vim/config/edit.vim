@@ -83,3 +83,26 @@ vnoremap ' :s/\%V\(.*\%V.\)/'\1'/<CR>:noh<CR>`>l
 vnoremap " :s/\%V\(.*\%V.\)/"\1"/<CR>:noh<CR>`>l
 
 
+
+
+
+
+
+" https://vi.stackexchange.com/questions/12376/vim-on-wsl-synchronize-system-clipboard-set-clipboard-unnamed
+" let s:slip = '/mnt/c/Windows/System32/clip.exe'
+" if executable(s:clip)
+"   augroup WSLYank
+"     autocmd!
+"     autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
+"   augroup END
+" end
+
+noremap "+p :exe 'norm a'.system('/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -Command Get-Clipboard')<CR>
+
+
+" https://superuser.com/questions/322947/gvim-shift-insert-dump-s-insert-instead-of-the-clipboard-text
+map <silent> <S-Insert> "+p
+imap <silent> <S-Insert> <Esc>"+pa
+
+
+

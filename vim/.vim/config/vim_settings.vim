@@ -23,14 +23,14 @@ set timeout timeoutlen=1000 ttimeoutlen=100
 
 " ......................................................................... Swap
 
-set directory=~/.vim/swap              " keep swap files in one location
+" set directory=~/.vim/swap              " keep swap files in one location
 
 "  ........................................................................ Undo
 
 " keep persistent undo history across sessions, by storing in file
 silent !mkdir ~/.vim/backup 2>/dev/null
 set history=1000                      " store lots of :cmdline history
-set undodir=~/.vim/backup
+" set undodir=~/.vim/backup
 set undofile
 set undolevels=1000                   " maximum number of changes that can be undone
 set undoreload=10000                  " maximum number lines to save for undo
