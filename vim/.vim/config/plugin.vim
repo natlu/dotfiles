@@ -82,6 +82,11 @@ Plug 'jalvesaq/Nvim-R'                 " R plugin
 " ..............................................................................
 
 Plug 'jpalardy/vim-slime'
+" Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+" Plug 'eldridgejm/tslime_ipython'
+
+
+
 
 
 " Editing ______________________________________________________________________
@@ -93,6 +98,7 @@ Plug 'jpalardy/vim-slime'
 " Plug 'kshenoy/vim-signature'         " toggle marks
 " Plug 'justinmk/vim-sneak'            " jump to location
 Plug 'scrooloose/nerdtree'             " tree explorer
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " nerdtree colours
 
 " ...................................................................... History
 

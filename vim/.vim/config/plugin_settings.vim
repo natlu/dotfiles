@@ -34,15 +34,61 @@ let R_assign = 0
 
 
 " tmux compatability
-let R_source = '~/.vim/autoload/tmux_split.vim'
-let R_in_buffer = 0
-let R_tmux_split = 1
-let R_tmux_close = 0
+" let R_source = '~/.vim/plugged/Nvim-R/R/tmux_split.vim'
+" let R_in_buffer = 0
+" let R_tmux_split = 1
+" let R_tmux_close = 0
 
 
 " ........................................................................ Slime
 
+" always use tmux
 let g:slime_target = "tmux"
+
+" fix paste issues in ipython
+let g:slime_python_ipython = 1
+
+" always send text to the top-right pane in the current tmux tab without asking
+" let g:slime_default_config = {
+"             \ 'socket_name': get(split($TMUX, ','), 0),
+"             \ 'target_pane': '{top-right}' }
+" let g:slime_dont_ask_default = 1
+
+
+" ............................................................... tslime_ipython
+" use tags instead of marks
+" noremap <C-b> :python slime_cell(delimit_cell_by='tags') <CR>
+
+" delimit by tags, where a tag is a line containing only '## cell'
+" noremap <C-b> :python slime_cell(delimit_cell_by='tags', tag='# cell') <CR>
+
+
+" ................................................................. ipython-cell
+ 
+" " Use '##' to define cells instead of using marks
+" " let g:ipython_cell_delimit_cells_by = 'tags'
+" 
+" " map <Leader>r to run script
+" " autocmd FileType python nnoremap <buffer> <Leader>r :IPythonCellRun<CR>
+" 
+" " map <Leader>R to run script and time the execution
+" " autocmd FileType python nnoremap <buffer> <Leader>R :IPythonCellRunTime<CR>
+" 
+" " map <Leader>c to execute the current cell
+" autocmd FileType python nnoremap <buffer> <Leader>c :IPythonCellExecuteCell<CR>
+" 
+" " map <Leader>C to execute the current cell and jump to the next cell
+" autocmd FileType python nnoremap <buffer> <Leader>C :IPythonCellExecuteCellJump<CR>
+" 
+" " map <Leader>l to clear IPython screen
+" " autocmd FileType python nnoremap <buffer> <Leader>l :IPythonCellClear<CR> 
+" 
+" " map <Leader>x to close all Matplotlib figure windows
+" " autocmd FileType python nnoremap <buffer> <Leader>x :IPythonCellClose<CR>
+" 
+" " map [c and ]c to jump to the previous and next cell header
+" autocmd FileType python nnoremap <buffer> [c :IPythonCellPrevCell<CR>
+" autocmd FileType python nnoremap <buffer> ]c :IPythonCellNextCell<CR> 
 
 " .......................................................................... Ale
 
@@ -105,6 +151,13 @@ nnoremap <F9> :NERDTreeToggle<cr>
 
 let g:NERDTreeDirArrowExandpable = '+'
 let g:NERDTreeDirArrowCollapsible = '-' 
+
+
+" vim-nerdtree-syntax-highlight settings
+" let g:NERDTreeFileExtensionHighlightFullName = 1
+" let g:NERDTreeExactMatchHighlightFullName = 1
+" let g:NERDTreePatternMatchHighlightFullName = 1
+
 
 " .................................................................. Eightheader
 
@@ -330,12 +383,13 @@ let g:limelight_priority            = 1 " -1 to hlsearch highlight all paragraph
 
 " .......... gruvbox .......... "
 
-" colorscheme gruvbox
-" set background=dark
+colorscheme gruvbox
+set background=dark
+let g:gruvbox_contrast_dark='hard'
 
 " .......... shoji .......... "
 
-colorscheme shoji_niji
+" colorscheme shoji_niji
 " set termguicolors
 if &term =~ '256color'
   " disable Background Color Erase (BCE)
