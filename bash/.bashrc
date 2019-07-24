@@ -130,7 +130,7 @@ LS_COLORS='rs=0:di=01;36:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:c
 export LS_COLORS
 
 
-
+export PATH=/usr/local/anaconda3/anaconda/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin:bin/msys-ssh-1000-18:/opt/puppetlabs/bin:/home/nlu/.local/bin:/home/nlu/bin:
 
 # export BROWSER='/mnt/c/PROGRA~2/Google/Chrome/Application/chrome.exe'
 # export BROWSER='/mnt/c/PROGRA~2/Google/Chrome/Application/chrome.exe --user-data-dir="/home/nlu/project/tmp/"'
@@ -789,3 +789,19 @@ esac
 
 # initiate fasd
 eval "$(fasd --init auto)"
+
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/var/efs/analytics/nlu/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/var/efs/analytics/nlu/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/var/efs/analytics/nlu/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/var/efs/analytics/nlu/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
+

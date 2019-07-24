@@ -229,6 +229,11 @@ nmap <silent><leader>m :Marks<CR>
 " for instance when gundo window is orphaned (trap timing conflict)
 " autocmd plugin BufHidden __Gundo_Preview__ call core#Quietly('bdelete! __Gundo_Preview__')
 
+
+" .................................................................... undootree
+nnoremap <F5> :UndotreeToggle<cr>
+let g:undotree_ShortIndicators = 1
+
 " ................................................................ Indent guides
 
 " subtle highlighting of even indents only, see core#ToggleColumn(), theme#IndentTheme()
@@ -386,6 +391,16 @@ let g:limelight_priority            = 1 " -1 to hlsearch highlight all paragraph
 colorscheme gruvbox
 set background=dark
 let g:gruvbox_contrast_dark='hard'
+
+" :hi Normal
+" hi Folded ctermbg=235
+
+" let foo=synIDattr(synIDtrans(hlID('Normal')), 'bg') 
+let foo=synIDattr(hlID('Normal'), 'bg') 
+exe 'hi Folded ctermbg=' . foo
+
+
+" hi Folded ctermbg=synIDattr(synIDtrans(hlID('Normal')), 'bg')
 
 " .......... shoji .......... "
 

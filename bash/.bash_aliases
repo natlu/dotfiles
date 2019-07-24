@@ -1,2 +1,2 @@
-alias python=python3
-alias ipython=ipython3
+# alias python=python3
+# alias ipython=ipython3

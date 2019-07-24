@@ -15,16 +15,16 @@ Plug 'morhetz/gruvbox'                 " easily distinguishable colours
 Plug 'nightsense/shoji'                " Syntax w/ colourful bkg highlighting
 " Plug 'kamwitsta/flatwhite-vim'       " atom light background theme
 " Plug 'NLKNguyen/papercolor-theme'    " paper theme
-" Plug 'junegunn/seoul256.vim'         " based on seoul colours
-" Plug 'tlhr/anderson.vim'             " wes anderson colours
+Plug 'junegunn/seoul256.vim'         " based on seoul colours
+Plug 'tlhr/anderson.vim'             " wes anderson colours
+Plug 'sheerun/vim-wombat-scheme'
 " Plug 'reedes/vim-colors-pencil'      " for use with Goyo
 
 " ........................................................................... UI
 Plug 'junegunn/limelight.vim'          " hyperfocus highlighting
-" Plug 'blueyed/vim-diminactive'       " dim inactive windows
+Plug 'blueyed/vim-diminactive'       " dim inactive windows
 " Plug 'itchyny/lightline.vim'         " status bar
-" Plug 'itchyny/vim-cursorword'        " word underlining
-" Plug 'lilydjwg/colorizer'            " colourise text like #rrggbb or #rgb
+Plug 'lilydjwg/colorizer'            " colourise text like #rrggbb or #rgb
 " Plug 'machakann/vim-highlightedyank' " highlight yanked text
 
 " ......................................................................... Info
@@ -44,7 +44,7 @@ Plug 'christoomey/vim-tmux-navigator'  " navigate b/w tmux and vim
 " ................................................................. Highlighting
 
 " Plug 'markonm/traces.vim'            " ex pattern/range highlghting
-" Plug 'itchyny/vim-cursorword'        " word highlighting
+Plug 'itchyny/vim-cursorword'          " word highlighting
 " Plug 'nathanaelkane/vim-indent-guides', { 'on' : 'IndentGuidesToggle' } " colourized indent columns
 
 " ......................................................................... Tmux
@@ -104,7 +104,7 @@ Plug 'scrooloose/nerdtree'             " tree explorer
 
 " Plug 'sjl/gundo.vim', { 'on' : 'GundoToggle' } " undo
 " Plug 'vim-scripts/YankRing.vim'      " paste (yank)
-" Plug 'mbbill/undootree'              " undo
+Plug 'mbbill/undotree'                 " undo
 
 " ................................................................... Formatting
 
