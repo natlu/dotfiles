@@ -68,10 +68,10 @@ imap <silent><S-Down>    <ESC>:call <SID>moveLineDown()<CR>a
 vmap <silent><S-Down>    <ESC>:call <SID>moveVisualDown()<CR>
 
 " byte shift left / right
-nnoremap <leader><Left>  :s/^ //<CR>:silent nohlsearch<CR>
-nnoremap <leader><Right> :s/^/ /<CR>:silent nohlsearch<CR>
-vnoremap <leader><Left>  :s/^ //<CR>:silent nohlsearch<CR>gv
-vnoremap <leader><Right> :s/^/ /<CR>:silent nohlsearch<CR>gv
+" nnoremap <leader><Left>  :s/^ //<CR>:silent nohlsearch<CR>
+" nnoremap <leader><Right> :s/^/ /<CR>:silent nohlsearch<CR>
+" vnoremap <leader><Left>  :s/^ //<CR>:silent nohlsearch<CR>gv
+" vnoremap <leader><Right> :s/^/ /<CR>:silent nohlsearch<CR>gv
 
 
 " Text manipulation ____________________________________________________________
@@ -79,8 +79,8 @@ vnoremap <leader><Right> :s/^/ /<CR>:silent nohlsearch<CR>gv
 " ...................................................... Quote enclose selection
 
 " extend enclosing %V 1 char right to enclose last character of block
-vnoremap ' :s/\%V\(.*\%V.\)/'\1'/<CR>:noh<CR>`>l
-vnoremap " :s/\%V\(.*\%V.\)/"\1"/<CR>:noh<CR>`>l
+" vnoremap ' :s/\%V\(.*\%V.\)/'\1'/<CR>:noh<CR>`>l
+" vnoremap " :s/\%V\(.*\%V.\)/"\1"/<CR>:noh<CR>`>l
 
 
 
@@ -97,12 +97,12 @@ vnoremap " :s/\%V\(.*\%V.\)/"\1"/<CR>:noh<CR>`>l
 "   augroup END
 " end
 
-noremap "+p :exe 'norm a'.system('/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -Command Get-Clipboard')<CR>
+" noremap "+p :exe 'norm a'.system('/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -Command Get-Clipboard')<CR>
 
 
 " https://superuser.com/questions/322947/gvim-shift-insert-dump-s-insert-instead-of-the-clipboard-text
-map <silent> <S-Insert> "+p
-imap <silent> <S-Insert> <Esc>"+pa
+" map <silent> <S-Insert> "+p
+" imap <silent> <S-Insert> <Esc>"+pa
 
 
 

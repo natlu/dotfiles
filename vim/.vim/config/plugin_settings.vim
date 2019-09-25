@@ -15,7 +15,7 @@
 " ....................................................................... vimwiki
 
 let g:vimwiki_list = [{
-    \   'path': '/data/analytics/nlu/vimwiki'
+    \   'path': '/var/efs/analytics/nlu/vimwiki'
     \ , 'syntax': 'markdown'
     \ , 'ext': '.md'
     \}]
@@ -54,6 +54,14 @@ let g:slime_python_ipython = 1
 "             \ 'target_pane': '{top-right}' }
 " let g:slime_dont_ask_default = 1
 
+" noremap <C-r> :SlimeSendCurrentLine <CR>
+noremap <leader>l :SlimeSendCurrentLine <CR>
+noremap <leader>d :SlimeSendCurrentLine <CR>j
+
+xmap <leader>r <Plug>SlimeRegionSend
+nmap <leader>r <Plug>SlimeParagraphSend
+
+nmap <leader>w viw<Plug>SlimeRegionSend
 
 " ............................................................... tslime_ipython
 " use tags instead of marks
@@ -134,7 +142,14 @@ xmap ga <Plug>(EasyAlign)
 
 nmap ga <Plug>(EasyAlign)
 
-" ................................................................... Auto-pairs
+
+" ......................................................................... Goyo
+" f8 to toggle Goyo
+nnoremap <F8> :Goyo<cr>
+
+let g:goyo_width=100
+
+" ..................................................................... NERDTree
 " f9 to toggle nerdtree
 nnoremap <F9> :NERDTreeToggle<cr>
 
@@ -170,16 +185,70 @@ let g:NERDTreeDirArrowCollapsible = '-'
 "     \, '\\= s:foldlines . \" lines\"'
 "     \, ''
 "     \)"
-
+" matchstr(s:str, ';\\@<=.*')
 set fillchars=fold:\ 
 let &foldtext =
       \"EightHeaderFolds(
       \   80
       \, 'left'
-      \, [ repeat( '→ ', v:foldlevel ), ' ', '' ]
+      \, [ repeat(' ', indent(v:foldstart)).repeat( '  ', v:foldlevel - 1).'→ ', ' ', '' ]
       \, '\\=s:foldlines . \" lines\"'
-      \, '\\=s:str[0:68]'
+      \, '\\=s:str[0:(70 - len(s:foldlines) - indent(v:foldstart))]'
       \)"
+" \, [ repeat( '→ ', v:foldlevel ), ' ', '' ]
+" \, [ repeat( '  ', v:foldlevel - 1).'→ ', ' ', '' ]
+" \, '\\=s:str[0:68]'
+      " \, '\\=s:foldlines . \" lines\"'
+      " \, matchstr(s:str, "^[^#]*")
+" \, '\\=s:str[0:(70 - len(s:foldlines))]'
+"
+" let &foldtext =
+"       \"EightHeaderFolds(
+"       \   80
+"       \, 'right'
+"       \, [ repeat( '  ', v:foldlevel - 1).'→ ', ' ', '' ]
+"       \, '\\=repeat(\" \", 71 - len(s:str) - len(s:foldlines) - v:foldlevel) . s:foldlines . \" lines\"'
+"       \, '\\=s:str[0:(70 - len(s:foldlines) - v:foldlevel)]'
+"       \)"
+
+
+" .................................................................... lightline
+
+let g:lightline = {
+      \ 'colorscheme': 'PaperColor',
+      \ 'active': {
+      \   'right': [ [ 'lineinfo', 'syntastic' ],
+      \              [ 'percent'  ] ]
+      \ },
+      \ }
+
+
+" ........................................................................ theme
+
+" .......... gruvbox .......... "
+
+set background=dark
+let g:gruvbox_contrast_dark='soft'
+colorscheme gruvbox
+
+" :hi Normal
+" hi Folded ctermbg=235
+
+" let foo=synIDattr(synIDtrans(hlID('Normal')), 'bg') 
+let foo=synIDattr(hlID('Normal'), 'bg') 
+exe 'hi Folded ctermbg=' . foo
+
+
+" hi Folded ctermbg=synIDattr(synIDtrans(hlID('Normal')), 'bg')
+
+" .......... shoji .......... "
+
+" colorscheme shoji_niji
+" set termguicolors
+if &term =~ '256color'
+  " disable Background Color Erase (BCE)
+  set t_ut=
+endif 
 
 " .......................................................................... Fzf
 
@@ -200,17 +269,18 @@ let &foldtext =
 "     \, 'header'  : ['fg', 'Directory']
 "     \}
 
-let g:fzf_colors =
-    \{
-    \  'fg+'     : ['fg', 'CursorLine']
-    \, 'bg+'     : ['bg', 'CursorLine']
-    \}
+" let g:fzf_colors =
+"     \{
+"     \  'fg+'     : ['fg', 'CursorLine']
+"     \, 'bg+'     : ['bg', 'CursorLine']
+"     \}
 
 " close any diff buffer before leaving buffer
-nmap <silent><leader>b :silent call core#CloseDiffOrig()<CR>:Buffers<CR>
-nmap <silent><leader>l :Lines<CR>
-nmap <silent><leader>m :Marks<CR>
+" nmap <silent><leader>b :silent call core#CloseDiffOrig()<CR>:Buffers<CR>
+" nmap <silent><leader>l :Lines<CR>
+" nmap <silent><leader>m :Marks<CR>
 " nmap <leader>f       :FZF<CR>       " see notational-fzf for extended content search
+nnoremap <silent> <Leader>f :Files<CR>
 
 " ............................................................... Graphical undo
 
@@ -244,8 +314,8 @@ let g:undotree_ShortIndicators = 1
 " .................................................................... Limelight
 
 " let g:limelight_default_coefficient = 0.8
-let g:limelight_paragraph_span      = 0 " include preceding/following paragraphs
-let g:limelight_priority            = 1 " -1 to hlsearch highlight all paragraphs, 1 per paragraph
+" let g:limelight_paragraph_span      = 0 " include preceding/following paragraphs
+" let g:limelight_priority            = 1 " -1 to hlsearch highlight all paragraphs, 1 per paragraph
 
 " ................................................................ Narrow region
 
@@ -376,40 +446,6 @@ let g:limelight_priority            = 1 " -1 to hlsearch highlight all paragraph
 " xmap T         <Plug>Sneak_T
 " omap t         <Plug>Sneak_t
 " omap T         <Plug>Sneak_T
-
-" .................................................................... Solarized
-
-" let g:solarized_termtrans = 1         " terminal transparency (0) off (1) on
-" set termguicolors                     " for neovim
-
-" syntax enable
-
-" ........................................................................ theme
-
-" .......... gruvbox .......... "
-
-colorscheme gruvbox
-set background=dark
-let g:gruvbox_contrast_dark='hard'
-
-" :hi Normal
-" hi Folded ctermbg=235
-
-" let foo=synIDattr(synIDtrans(hlID('Normal')), 'bg') 
-let foo=synIDattr(hlID('Normal'), 'bg') 
-exe 'hi Folded ctermbg=' . foo
-
-
-" hi Folded ctermbg=synIDattr(synIDtrans(hlID('Normal')), 'bg')
-
-" .......... shoji .......... "
-
-" colorscheme shoji_niji
-" set termguicolors
-if &term =~ '256color'
-  " disable Background Color Erase (BCE)
-  set t_ut=
-endif 
 
 " ....................................................................... Tagbar
 

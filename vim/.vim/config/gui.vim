@@ -29,6 +29,16 @@ endif
 let &t_8f = "<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "<Esc>[48;2;%lu;%lu;%lum"
 
+
+" different cursor for insert mode
+if exists('$TMUX')
+  let &t_SI = "\<Esc>[4 q"
+  let &t_EI = "\<Esc>[0 q"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
 " ....................................................................... Alerts
 
 set noerrorbells                       " don't beep
@@ -53,7 +63,7 @@ set encoding=utf-8                     " necessary to show unicode glyphs
 
 " ....................................................................... Cursor
 
-set cursorline                         " highlight current line
+" set cursorline                         " highlight current line
 
 set guicursor=a:block                  " mode aware cursors
 set guicursor+=o:hor50-Cursor
@@ -77,7 +87,8 @@ set guioptions-=T                      " no toolbar
 
 " ............................................................... Column margins
 
-set colorcolumn=81                     " highlight column
+" set colorcolumn=81                   " highlight column
+set colorcolumn=81,101                 " highlight column
 
 " let &colorcolumn=join(range(82,999),",")
 " let &colorcolumn="81,".join(range(120,999),",")
@@ -94,8 +105,8 @@ set relativenumber
 
 " ....................................................... Status / command lines
 
-set laststatus=0                       " do not show status line
-" set laststatus=2                     " always show status line
+" set laststatus=0                     " do not show status line
+set laststatus=2                       " always show status line
 " set ruler                            " show cursor position in status line
 set noshowcmd                          " show incomplete cmds in command line
 set noshowmode                         " show current mode in command line
@@ -105,13 +116,13 @@ set noshowmode                         " show current mode in command line
 " .......................................................... White space markers
 
 set nolist                             " don't display tabs and trailing spaces visually
-set listchars="tab:▸\<Space>"
+" set listchars="tab:▸\<Space>"
 
 " set listchars+=trail:_
-set listchars+=trail:·
-set listchars+=nbsp:.
-set listchars+=extends:>
-set listchars+=precedes:<
+" set listchars+=trail:·
+" set listchars+=nbsp:.
+" set listchars+=extends:>
+" set listchars+=precedes:<
 " set listchars+=eol:¬
 
 

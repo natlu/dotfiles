@@ -78,3 +78,8 @@ xnoremap <Del> "_d
 vmap <A-k> {
 vmap <A-j> }
 
+" .............................................................. new lines
+"
+" These enter a blank line above and below the cursor.
+" nnoremap [<space>  O<esc>j
+" nnoremap ]<space>  o<esc>k

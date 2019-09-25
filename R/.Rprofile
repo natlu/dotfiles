@@ -15,3 +15,4 @@ resize <- function(how_wide = Sys.getenv("COLUMNS")) {
 q <- function(save="no", ...) {
     quit(save=save, ...)
 }
+
