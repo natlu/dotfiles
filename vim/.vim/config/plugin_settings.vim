@@ -58,10 +58,12 @@ let g:slime_python_ipython = 1
 noremap <leader>l :SlimeSendCurrentLine <CR>
 noremap <leader>d :SlimeSendCurrentLine <CR>j
 
-xmap <leader>r <Plug>SlimeRegionSend
+" xmap <leader>r <Plug>SlimeRegionSend
+xmap <leader>r <Plug>SlimeRegionSendDown
 nmap <leader>r <Plug>SlimeParagraphSend
 
 nmap <leader>w viw<Plug>SlimeRegionSend
+
 
 " ............................................................... tslime_ipython
 " use tags instead of marks
@@ -145,9 +147,9 @@ nmap ga <Plug>(EasyAlign)
 
 " ......................................................................... Goyo
 " f8 to toggle Goyo
-nnoremap <F8> :Goyo<cr>
+" nnoremap <F8> :Goyo<cr>
 
-let g:goyo_width=100
+" let g:goyo_width=100
 
 " ..................................................................... NERDTree
 " f9 to toggle nerdtree
@@ -230,6 +232,7 @@ let g:lightline = {
 set background=dark
 let g:gruvbox_contrast_dark='soft'
 colorscheme gruvbox
+" colorscheme corvine
 
 " :hi Normal
 " hi Folded ctermbg=235
@@ -504,3 +507,10 @@ call arpeggio#map('i', '', 0, 'jk', '<Esc>')
 " nmap <silent><leader>y :YRShow<CR>
 
 
+" .................................................................... vim-yoink
+" 
+" nmap <c-n> <plug>(YoinkPostPasteSwapBack)
+" nmap <c-p> <plug>(YoinkPostPasteSwapForward)
+" 
+" nmap p <plug>(YoinkPaste_p)
+" nmap P <plug>(YoinkPaste_P)

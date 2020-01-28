@@ -19,10 +19,12 @@ Plug 'morhetz/gruvbox'                 " easily distinguishable colours
 " Plug 'tlhr/anderson.vim'             " wes anderson colours
 " Plug 'sheerun/vim-wombat-scheme'
 " Plug 'reedes/vim-colors-pencil'      " for use with Goyo
+" Plug 'arzg/vim-corvine'              " The Raven Dark colourscheme for Vim
 
 " ........................................................................... UI
 " Plug 'junegunn/limelight.vim'          " hyperfocus highlighting
-Plug 'blueyed/vim-diminactive'         " dim inactive windows
+" Plug 'blueyed/vim-diminactive'         " dim inactive windows
+Plug 'TaDaa/vimade'                    " fade inactive windows
 Plug 'itchyny/lightline.vim'           " status bar
 Plug 'lilydjwg/colorizer'              " colourise text like #rrggbb or #rgb
 " Plug 'machakann/vim-highlightedyank' " highlight yanked text
@@ -55,18 +57,18 @@ Plug 'christoomey/vim-tmux-navigator'  " navigate b/w tmux and vim
 " ................................................................... Management
 
 " Plug 'chrisbra/NrrwRgn', { 'on' : 'NrrwrgnDo' } " visual block buffer
-Plug 'junegunn/goyo.vim'               " distraction free writing
+" Plug 'junegunn/goyo.vim'               " distraction free writing
 
 " .............................................................. Version control
 
 Plug 'tpope/vim-fugitive'              " github wrapper
-Plug 'airblade/vim-gitgutter'          " git diff symbols
+" Plug 'airblade/vim-gitgutter'        " git diff symbols
 " Plug markwoodhall/vim-mercurial      " mercurial wrapper
 " Plug 'mhinz/vim-signify'             " vcs diff
 
 " .................................................................... Hypertext
 
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 Plug '/var/efs/analytics/nlu/project/packages/.fzf/'    " fuzzy finder
 Plug 'junegunn/fzf.vim'                " fuzzy finder
 " Plug 'Alok/notational-fzf-vim'       " fzf note search
@@ -96,15 +98,19 @@ Plug 'jpalardy/vim-slime'
 " Plug 'wellle/targets.vim'            " text objects
 " Plug 'Konfekt/FastFold'              " update folds
 " Plug 'kshenoy/vim-signature'         " toggle marks
-" Plug 'justinmk/vim-sneak'              " jump to location
+" Plug 'justinmk/vim-sneak'            " jump to location
 Plug 'scrooloose/nerdtree'             " tree explorer
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " nerdtree colours
+Plug 'wellle/targets.vim'              " text object navigation
+Plug 'terryma/vim-expand-region'       " visually select regions of text
+" Plug 'kana/vim-textobj-fold'           " fold text object
 
 " ...................................................................... History
 
 " Plug 'sjl/gundo.vim', { 'on' : 'GundoToggle' } " undo
-" Plug 'vim-scripts/YankRing.vim'      " paste (yank)
 Plug 'mbbill/undotree'                 " undo
+" Plug 'vim-scripts/YankRing.vim'      " paste (yank)
+" Plug 'svermeulen/vim-yoink'          " paste (yank)
 
 " ................................................................... Formatting
 
@@ -112,13 +118,14 @@ Plug 'junegunn/vim-easy-align'         " align text objects
 Plug 'tpope/vim-commentary'            " comments
 " Plug 'scrooloose/nerdcommenter'      " toggle comment
 " Plug 'reedes/vim-pencil'             " dynamic paragraph formatting
+" Plug 'dbmrq/vim-chalk'               " marker folds
 
 " ................................................................... Completion
 
 " Plug 'jiangmiao/auto-pairs'          " insert/delete pairs
 " Plug 'kana/vim-textobj-user'         " dependency
 Plug 'tpope/vim-surround'              " pairwise c'hange, d'elete, y'ank
-" Plug 'tpope/vim-repeat'              " enable repeating supported plugin maps
+Plug 'tpope/vim-repeat'                " enable repeating supported plugin maps
 Plug 'ajh17/VimCompletesMe'            " vim completion
 
 "........................................................................ Table
