@@ -15,7 +15,5 @@ for file in configs
   endif
 endfor
 
-" this does not work if it is put in the configs folder
-" reason: unknown
-map <SPACE> <leader>
+" map <SPACE> <leader>
 
