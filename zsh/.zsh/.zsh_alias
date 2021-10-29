@@ -1,0 +1,5 @@
+
+alias ll='exa -lah'
+alias ls='exa -ah'
+
+# alias vim='nvim'
