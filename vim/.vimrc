@@ -16,4 +16,6 @@ for file in configs
 endfor
 
 " map <SPACE> <leader>
-
+nnoremap <SPACE> <Nop>
+map <SPACE> <leader>
+let mapleader='\<Space>'
