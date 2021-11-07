@@ -37,10 +37,10 @@ set undoreload=10000                  " maximum number lines to save for undo
 
 " .............................................................. Line formatting
 
-" double spaces at the end of a wrapped line, becomes <br> by markdown
-set nojoinspaces                      " force single spacing after sentence punctuation!
+set nojoinspaces                      " 1 space instead of 2 after punctuation when using J
 set textwidth=80                      " normally 78-80, see autocmd for mail
 let g:linewidth = &textwidth
+
 
 " ......................................................................... Tabs
 
