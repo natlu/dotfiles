@@ -1,4 +1,4 @@
-*.sw.
+*.sw[a-z]
 *.zsh_history
 vim/.vim/plugged/*/
 *~
