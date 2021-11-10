@@ -31,7 +31,7 @@ Plug 'lilydjwg/colorizer'              " colourise text like #rrggbb or #rgb
 
 " ......................................................................... Info
 
-Plug 'bimlas/vim-eightheader'          " custom foldtext
+" Plug 'bimlas/vim-eightheader'          " custom foldtext
 " Plug 'majutsushi/tagbar'             " ctags
 " Plug 'junegunn/vim-peekaboo'         " peek at registers
 " Plug 'Yilin-Yang/vim-markbar'        " sidebar for marks
@@ -61,15 +61,14 @@ Plug 'christoomey/vim-tmux-navigator'  " navigate b/w tmux and vim
 
 " .............................................................. Version control
 
-Plug 'tpope/vim-fugitive'              " github wrapper
+Plug 'tpope/vim-fugitive'              " git wrapper
 " Plug 'airblade/vim-gitgutter'        " git diff symbols
 " Plug markwoodhall/vim-mercurial      " mercurial wrapper
 " Plug 'mhinz/vim-signify'             " vcs diff
 
 " .................................................................... Hypertext
 
-" Plug 'vimwiki/vimwiki'
-Plug '/var/efs/analytics/nlu/project/packages/.fzf/'    " fuzzy finder
+Plug '/opt/homebrew/opt/fzf'
 Plug 'junegunn/fzf.vim'                " fuzzy finder
 " Plug 'Alok/notational-fzf-vim'       " fzf note search
 
@@ -93,6 +92,8 @@ Plug 'jpalardy/vim-slime'
 
 " Editing ______________________________________________________________________
 
+" Plug 'vimwiki/vimwiki'
+"
 " ................................................................... Navigation
 
 " Plug 'wellle/targets.vim'            " text objects
