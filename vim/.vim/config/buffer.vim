@@ -42,9 +42,9 @@ autocmd buffer BufWinEnter *.wiki set filetype=markdown
 set nofoldenable                         " no fold by default
 " set foldlevelstart=10                  " open most folds by default
 " set foldnestmax=10                     " 10 nested fold max
-" set foldmethod=indent                " fold based on indent
+set foldmethod=indent                " fold based on indent
 " set foldmethod=syntax                  " folding based on syntax
-set foldmethod=marker
+" set foldmethod=marker
 
 " let javaScript_fold=1                  " JavaScript
 " let xml_syntax_folding=1               " XML
