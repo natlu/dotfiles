@@ -25,13 +25,16 @@ set hidden                             " allow hidden background buffers
 autocmd buffer Filetype markdown  setlocal spell wrap enc=utf-8 formatoptions=tqwan1 textwidth=72
 " autocmd buffer Filetype note      setlocal spell wrap enc=utf-8 formatoptions=tqwan1 textwidth=72
 autocmd buffer Filetype python    setlocal nospell expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd buffer Filetype json    setlocal spell nowrap expandtab tabstop=4 shiftwidth=4 softtabstop=4 cursorcolumn cursorline
+autocmd buffer Filetype yaml    setlocal spell nowrap expandtab tabstop=4 shiftwidth=4 softtabstop=4 cursorcolumn cursorline
+autocmd buffer Filetype yml    setlocal spell nowrap expandtab tabstop=4 shiftwidth=4 softtabstop=4 cursorcolumn cursorline
 " autocmd buffer Filetype shell     setLocal nospell expandtab tabstop=2 shiftwidth=2 softtabstop=2
 " autocmd buffer Filetype sh        setlocal nospell expandtab tabstop=2 shiftwidth=2 softtabstop=2
 " autocmd buffer Filetype snippet   setlocal nospell noexpandtab tabstop=2 shiftwidth=2
 autocmd buffer Filetype vim       setlocal nospell expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 autocmd buffer BufWinEnter *.vim  set filetype=vim
-autocmd buffer BufWinEnter *.wiki set filetype=markdown
+" autocmd buffer BufWinEnter *.wiki set filetype=markdown " don't need as ext for vimwiki has been set to md
 
 
 " Folding ______________________________________________________________________
