@@ -126,3 +126,4 @@ set nolist                             " don't display tabs and trailing spaces 
 " set listchars+=eol:¬
 
 
+let g:markdown_fenced_languages = ['python']
